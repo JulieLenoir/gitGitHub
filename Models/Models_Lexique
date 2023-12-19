@@ -1,0 +1,23 @@
+<!-- Les models servent a ecrire les requetes :
+
+
+On commence toujours par include le DbConnect : include '../Core/Connect.php;
+
+toutes les requetes sont public 
+
+et se presente sous cette forme :
+public function add(Commentaire $commentaire)
+    {
+        try {
+            $this->request = $this->connection->prepare("INSERT INTO commentaire(texte_commentaire, date_commentaire, id_projet, id_user) 
+            VALUES (:texte_commentaire, :date_commentaire, :id_projet, :id_user)");
+
+            $this->request->bindValue(':texte_commentaire', $commentaire->getTexte_commentaire());
+            $this->request->bindValue(':date_commentaire', $commentaire->getDate_commentaire());
+            $this->request->bindValue(':id_projet', $commentaire->getId_projet());
+            $this->request->bindValue(':id_user', $commentaire->getId_user());
+
+            $this->request->execute();
+        } catch (Exception $e) {
+            echo 'erreur : ' . $e->getMessage();
+        } -->

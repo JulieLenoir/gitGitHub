@@ -1,0 +1,4 @@
+<!-- Les entities, permettent de stocker dans une classe reprennant son nom :
+-> les colonnes de la table (en private : )
+-> les getters 
+-> les setters -->

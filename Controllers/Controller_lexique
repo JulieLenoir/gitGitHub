@@ -1,0 +1,21 @@
+<!-- le controller c'est lui qui permet l'execution des requetes :
+
+->il include toujours les models et l'entities 
+->Il a un nom de methode :ex public function add()
+
+dans la methode, on va pouvoir y classer les variables, ($_POST // $_GET // $_SESSION)
+
+
+ Méthode qui permet d'afficher la liste des créations
+
+    public function index(string $message = "")
+    {
+        on instancie la classe CreationModel
+        $creations = new CreationModel();
+
+        on stocke dans une variable le return de la methode findAll()
+
+        $list = $creations->findAll();
+
+        $this->render('creation/index', ['list' => $list, 'message' => $message]);
+    } -->
